@@ -10,12 +10,11 @@ class Movie extends Controller {
       if (!isset($_REQUEST['movie'])) {
         //redirect to /movie
       }
-
+      
       $api = $this->model('Api');
-
+     
       $movie_title = $_REQUEST['movie'];
       $movie = $api->search_movie($movie_title);
-
       $this->view('movie/results', ['movie' => $movie]);
 
 
