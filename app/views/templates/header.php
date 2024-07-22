@@ -32,7 +32,7 @@ if (!isset($_SESSION['auth'])) {
         </li>
 
         <li class="nav-item">
-          <a href='/movie/index' class="nav-link">Rate</a>
+          <a href='/movie/rate' class="nav-link">Rate</a>
         </li>
         
         <li class="nav-item">

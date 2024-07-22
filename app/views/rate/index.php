@@ -1,4 +1,4 @@
-<?php require_once 'app/views/templates/header.php'; ?>
+<?php require_once 'app/views/templates/headerPublic.php'; ?>
 <style>
     .rating-container {
         max-width: 600px;
@@ -27,6 +27,8 @@
         padding: 0 5px;
     }
 </style>
+
+
 <main role="main" class="container">
     <div class="page-header" id="banner">
         <div class="row">
@@ -38,17 +40,17 @@
 
     <div class="row">
         <div class="col-sm-auto">
-            <form action="/movie/search_movie_for_rating" method="post">
-                <fieldset>
-                    <div class="form-group">
-                        <label for="search_movie">Search for a Movie</label>
-                        <input required type="text" class="form-control" name="search_movie" id="search_movie" placeholder="Enter movie title...">
-                    </div>
-                    <br>
-                    <button type="submit" class="btn btn-primary">Search</button>
-                </fieldset>
-            </form> 
-        </div>
+        <form action="/rate/search_movie_for_rating" method="post" >
+        <fieldset>
+          <div class="form-group">
+            <label for="movie">Movie</label>
+            <input required type="text" class="form-control" name="movie" id="movie" placeholder="Search for a movie...">
+          </div>
+                <br>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </fieldset>
+        </form> 
+      </div>
     </div>
 
     <?php if (isset($movie)) : ?>
@@ -65,7 +67,8 @@
                 <p><strong>Plot:</strong> <?php echo htmlspecialchars($movie['Plot']); ?></p>
                 <p><strong>IMDb Rating:</strong> <?php echo htmlspecialchars($movie['imdbRating']); ?></p>
             </div>
-
+            
+            
             <form action="/movie/submit_rating" method="post">
                 <input type="hidden" name="movie_title" value="<?php echo htmlspecialchars($movie['Title']); ?>">
                 <div class="form-group">
@@ -85,8 +88,9 @@
         </div>
     <?php endif; ?>
 
-</main>
-
+<br>
+<?php require_once 'app/views/templates/footer.php' ?>
+    
 <script>
     document.querySelectorAll('.rating-stars span').forEach(star => {
         star.addEventListener('click', function() {
@@ -99,4 +103,3 @@
     });
 </script>
 
-<?php require_once 'app/views/templates/footer.php'; ?>

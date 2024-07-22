@@ -29,6 +29,10 @@ if (isset($_SESSION['auth']) == 1) {
                 <li class="nav-item">
                   <a href='/movie/index' class="nav-link">Search</a>
                 </li>
+
+    <li class="nav-item">
+      <a href='/rate' class="nav-link">Rate</a>
+    </li>
                   <?php
                   if(!isset($_SESSION['authenticated'])) {
                       echo "<li class='nav-item'>

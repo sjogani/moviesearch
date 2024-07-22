@@ -22,4 +22,4 @@ class Movie extends Controller {
 
     }
 
-}
+  
