@@ -26,6 +26,10 @@ if (!isset($_SESSION['auth'])) {
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/home">Home</a>
         </li>
+
+        <li class="nav-item">
+          <a href='/movie/index' class="nav-link">Search</a>
+        </li>
         
         <li class="nav-item">
           <a href='/logout.php' class="nav-link">Logout</a>
