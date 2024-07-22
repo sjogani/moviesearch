@@ -30,6 +30,10 @@ if (!isset($_SESSION['auth'])) {
         <li class="nav-item">
           <a href='/movie/index' class="nav-link">Search</a>
         </li>
+
+        <li class="nav-item">
+          <a href='/movie/index' class="nav-link">Rate</a>
+        </li>
         
         <li class="nav-item">
           <a href='/logout.php' class="nav-link">Logout</a>
