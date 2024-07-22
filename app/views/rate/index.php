@@ -1,4 +1,4 @@
-<?php require_once 'app/views/templates/headerPublic.php'; ?>
+<?php require_once 'app/views/templates/header.php'; ?>
 <style>
     .rating-container {
         max-width: 600px;
@@ -69,7 +69,7 @@
             </div>
             
             
-            <form action="/movie/submit_rating" method="post">
+            <form action="/rate/submit_rating" method="post">
                 <input type="hidden" name="movie_title" value="<?php echo htmlspecialchars($movie['Title']); ?>">
                 <div class="form-group">
                     <label for="rating">Rate this Movie</label>

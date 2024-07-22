@@ -22,16 +22,17 @@ class Rate extends Controller {
   }
 
   public function submit_rating() {
+      
       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           $movie_title = $_POST['movie_title'];
           $rating = $_POST['rating'];
-
+            
           // Validate input
           if (empty($movie_title) || empty($rating) || $rating < 1 || $rating > 5) {
               echo "Invalid input.";
               return;
           }
-
+            
           $this->model('Rating')->add_rating($movie_title, $rating);
 
           // Redirect or display success message

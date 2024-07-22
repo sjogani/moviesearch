@@ -12,8 +12,14 @@ class Rating {
             return false;
         }
 
-        $stmt = $this->db->prepare("INSERT INTO ratings (movie_title, rating) VALUES (?, ?)");
-        $stmt->bind_param("si", $movie_title, $rating);
-        return $stmt->execute();
+        $db = db_connect();
+
+        $statement = $db->prepare("INSERT INTO ratings (movie_title, rating) VALUES (:movie, :rating);");
+        $statement->bindValue(':movie', $movie_title);
+        $statement->bindValue(':rating', $rating);
+        $statement->execute();
+
+        header('Location: /rate');
+        exit();
     }
 }
